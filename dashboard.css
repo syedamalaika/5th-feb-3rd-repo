@@ -1,0 +1,242 @@
+:root {
+    --side-blue: #1B3B4A;
+    --side-blue-dark: #142E3B;
+    --bg-light: #F8F9FA;
+    --primary-blue: #2D3FE7;
+    --warning-yellow: #FFD700;
+    --success-mint: #4ADE80;
+    --text-dark: #1B3B4A;
+    --text-gray: #6C757D;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --border-radius: 20px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* Layout */
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.dashboard-sidebar {
+    width: 280px;
+    background-color: var(--side-blue);
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.main-body {
+    flex: 1;
+    margin-left: 280px;
+    transition: var(--transition);
+}
+
+/* Sidebar Elements */
+.logo-box {
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.xsmall {
+    font-size: 0.75rem;
+}
+
+.nav-link-custom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-link-custom i {
+    width: 20px;
+    text-align: center;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    background-color: rgba(255, 215, 0, 0.1);
+    color: var(--warning-yellow);
+}
+
+.nav-link-custom.active {
+    background-color: rgba(255, 215, 0, 0.2);
+    font-weight: 600;
+}
+
+.text-danger-custom {
+    color: #FF6B6B;
+}
+
+/* Header */
+.main-header {
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.search-container input {
+    background-color: #F3F4F6;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.input-group-text {
+    background-color: #F3F4F6;
+    border: none;
+    border-radius: 10px 0 0 10px;
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #F3F4F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.icon-circle:hover {
+    background-color: #E5E7EB;
+}
+
+/* Cards */
+.card {
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.welcome-banner {
+    background-color: #FFF9E6;
+    position: relative;
+    overflow: hidden;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* Course Items */
+.course-item-horizontal {
+    background-color: white;
+    transition: var(--transition);
+}
+
+.course-item-horizontal:hover {
+    border-color: var(--primary-blue) !important;
+    transform: scale(1.01);
+}
+
+/* Upcoming Items */
+.upcoming-item {
+    background-color: #F8F9FA;
+    transition: var(--transition);
+}
+
+.upcoming-item:hover {
+    background-color: white;
+    box-shadow: var(--card-shadow);
+}
+
+/* Radial Chart Center */
+.radial-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Task/Assignment Badges */
+.bg-success-subtle {
+    background-color: #D1FAE5;
+}
+
+.bg-danger-subtle {
+    background-color: #FEE2E2;
+}
+
+.bg-info-subtle {
+    background-color: #E0F2FE;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+    display: none;
+}
+
+.dashboard-section.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .dashboard-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .main-body {
+        margin-left: 0;
+    }
+
+    .dashboard-sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--side-blue);
+    border-radius: 10px;
+}

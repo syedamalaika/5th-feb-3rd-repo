@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | GTTI RYK</title>
+    <!-- External Resources -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-top p-4">
+                <div class="brand-logo d-flex align-items-center gap-2 mb-4">
+                    <div class="logo-box bg-warning rounded-2 d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;">
+                        <i class="fas fa-graduation-cap text-dark"></i>
+                    </div>
+                    <span class="fs-4 fw-bold text-white">GTTI <span class="text-warning">RYK</span></span>
+                </div>
+
+                <div class="sidebar-category mt-5 mb-3">
+                    <span class="text-uppercase xsmall fw-bold opacity-50 text-white">General</span>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-link-custom active" data-target="dashboard"><i class="fas fa-th-large"></i>
+                        Dashboard</a>
+                    <a href="#" class="nav-link-custom" data-target="courses"><i class="fas fa-book-open"></i>
+                        Courses</a>
+                    <a href="#" class="nav-link-custom" data-target="activities"><i class="fas fa-tasks"></i>
+                        Activities</a>
+                    <a href="#" class="nav-link-custom" data-target="schedule"><i class="fas fa-calendar-alt"></i>
+                        Schedule</a>
+                    <a href="#" class="nav-link-custom" data-target="reports"><i class="fas fa-file-alt"></i> Quiz &
+                        Reports</a>
+                    <a href="#" class="nav-link-custom" data-target="grades"><i class="fas fa-award"></i> Grades</a>
+                    <a href="#" class="nav-link-custom" data-target="library"><i class="fas fa-bookmark"></i> My
+                        Library</a>
+                </nav>
+
+                <div class="sidebar-category mt-5 mb-3">
+                    <span class="text-uppercase xsmall fw-bold opacity-50 text-white">Settings</span>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-link-custom" data-target="settings"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="w5.html" class="nav-link-custom text-danger-custom mt-auto"><i
+                            class="fas fa-sign-out-alt"></i> Logout</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Body -->
+        <div class="main-body">
+            <!-- Top Header -->
+            <header class="main-header px-4 py-3 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn d-lg-none" id="toggleSidebar"><i class="fas fa-bars"></i></button>
+                    <div class="welcome-text">
+                        <h4 class="mb-0 fw-bold">Welcome back</h4>
+                        <p class="text-muted small mb-0">Hi Ali Ahmed, Welcome!</p>
+                    </div>
+                </div>
+
+                <div class="header-right d-flex align-items-center gap-4">
+                    <div class="search-container d-none d-md-block">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i
+                                    class="fas fa-search text-muted"></i></span>
+                            <input type="text" class="form-control border-start-0" placeholder="Search anything">
+                        </div>
+                    </div>
+                    <div class="header-icons d-flex align-items-center gap-3">
+                        <div class="icon-circle"><i class="fas fa-bell"></i></div>
+                        <div class="icon-circle"><i class="fas fa-comment-dots"></i></div>
+                        <div class="profile-preview d-flex align-items-center gap-2">
+                            <img src="https://ui-avatars.com/api/?name=Ali+Ahmed&background=1B3B4A&color=fff"
+                                class="rounded-circle" width="40" height="40" alt="Avatar">
+                            <i class="fas fa-chevron-down small text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area p-4">
+
+                <!-- Dashboard Home Section -->
+                <div id="dashboard" class="dashboard-section active">
+                    <div class="row g-4">
+                        <!-- Middle Column -->
+                        <div class="col-xl-8">
+                            <div class="row g-4">
+                                <!-- Banner -->
+                                <div class="col-12">
+                                    <div
+                                        class="welcome-banner p-4 rounded-4 d-flex align-items-center justify-content-between">
+                                        <div class="banner-text">
+                                            <h2 class="fw-bold mb-2">Welcome to easyhaionline!</h2>
+                                            <p class="mb-4">You have successfully completed about <br> 60% of your
+                                                studies. <span class="text-primary fw-bold">Keep it up!</span></p>
+                                        </div>
+                                        <div class="banner-img d-none d-sm-block">
+                                            <img src="https://cdni.iconscout.com/illustration/premium/thumb/female-student-reading-book-illustration-download-in-svg-png-gif-file-formats--girl-studying-college-academic-education-pack-illustrations-5270176.png"
+                                                height="150" alt="Learning">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Stats Widgets -->
+                                <div class="col-md-6">
+                                    <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="fw-bold mb-0">Daily Quiz</h6>
+                                            <i class="fas fa-ellipsis-h text-muted"></i>
+                                        </div>
+                                        <div class="quiz-chart-container" style="height: 120px;">
+                                            <canvas id="quizChart"></canvas>
+                                        </div>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <div>
+                                                <span class="d-block xsmall text-muted">Average Score</span>
+                                                <span class="fw-bold">85%</span>
+                                            </div>
+                                            <div class="text-end">
+                                                <span class="d-block xsmall text-muted">Quizzes Done</span>
+                                                <span class="fw-bold text-success">12/15</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="fw-bold mb-0">Overall Attendance</h6>
+                                            <i class="fas fa-ellipsis-h text-muted"></i>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center position-relative"
+                                            style="height: 120px;">
+                                            <canvas id="attendanceRadial"></canvas>
+                                            <div class="radial-center text-center">
+                                                <h3 class="fw-bold mb-0">94%</h3>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center gap-4 mt-3">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="dot bg-warning"></div>
+                                                <span class="xsmall text-muted">Progress</span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="dot bg-primary"></div>
+                                                <span class="xsmall text-muted">Done</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Learning Courses Preview -->
+                                <div class="col-12">
+                                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="fw-bold mb-0">Learning Courses</h6>
+                                            <a href="#" class="xsmall text-primary fw-bold text-decoration-none"
+                                                data-target="courses">View all</a>
+                                        </div>
+                                        <div class="course-list">
+                                            <div
+                                                class="course-item-horizontal d-flex align-items-center justify-content-between p-3 mb-3 border rounded-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div
+                                                        class="course-icon bg-danger bg-opacity-10 text-danger p-2 rounded">
+                                                        <i class="fas fa-code"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">Web Development</h6>
+                                                        <span class="xsmall text-muted">12 Lessons | Part 04</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-container flex-grow-1 mx-4 d-none d-md-block">
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-warning" style="width: 75%"></div>
+                                                    </div>
+                                                </div>
+                                                <span class="fw-bold fw-bold">75%</span>
+                                            </div>
+                                            <div
+                                                class="course-item-horizontal d-flex align-items-center justify-content-between p-3 border rounded-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div
+                                                        class="course-icon bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                                        <i class="fas fa-network-wired"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">Network Admin</h6>
+                                                        <span class="xsmall text-muted">08 Lessons | Part 02</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-container flex-grow-1 mx-4 d-none d-md-block">
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-primary" style="width: 40%"></div>
+                                                    </div>
+                                                </div>
+                                                <span class="fw-bold">40%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column (Upcoming & Assignments) -->
+                        <div class="col-xl-4">
+                            <!-- Upcoming Section -->
+                            <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h6 class="fw-bold mb-0"><i class="fas fa-calendar-day me-2 text-warning"></i>
+                                        Upcoming</h6>
+                                    <a href="#" class="xsmall text-muted text-decoration-none">View all</a>
+                                </div>
+                                <div class="upcoming-item p-3 rounded-4 mb-3 border-start border-4 border-warning">
+                                    <span class="xsmall text-muted d-block mb-1">Upcoming Exam</span>
+                                    <h6 class="fw-bold">Corporate Accounting</h6>
+                                    <div class="d-flex align-items-center gap-2 xsmall text-muted">
+                                        <i class="far fa-calendar"></i> 21 Sept 2024
+                                        <i class="far fa-clock ms-2"></i> 04:22 pm
+                                    </div>
+                                    <a href="#"
+                                        class="btn btn-sm btn-outline-primary rounded-pill mt-2 px-3 xsmall">View</a>
+                                </div>
+                                <div class="upcoming-item p-3 rounded-4 mb-3 border-start border-4 border-primary">
+                                    <span class="xsmall text-muted d-block mb-1">Upcoming Class</span>
+                                    <h6 class="fw-bold">Network Admin</h6>
+                                    <div class="d-flex align-items-center gap-2 xsmall text-muted">
+                                        <i class="far fa-calendar"></i> 22 Sept 2024
+                                        <i class="far fa-clock ms-2"></i> 10:00 am
+                                    </div>
+                                </div>
+                                <button class="btn btn-warning w-100 rounded-pill py-2 mt-2 fw-bold text-dark">Get More
+                                    Notification</button>
+                            </div>
+
+                            <!-- Assignment Section -->
+                            <div class="card border-0 shadow-sm rounded-4 p-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h6 class="fw-bold mb-0">Assignments</h6>
+                                    <i class="fas fa-ellipsis-h text-muted"></i>
+                                </div>
+                                <div class="assignment-list">
+                                    <div class="assignment-item d-flex align-items-start gap-3 mb-4">
+                                        <div class="check-box bg-warning rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 24px; height: 24px;">
+                                            <i class="fas fa-check xsmall text-dark"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-1 xsmall">Corporate Accounting</h6>
+                                            <p class="xsmall text-muted mb-0"><i class="far fa-calendar me-1"></i> 14
+                                                Sept 2024 <span
+                                                    class="badge bg-success-subtle text-success ms-2">Done</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="assignment-item d-flex align-items-start gap-3 mb-4">
+                                        <div class="check-box bg-light border rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 24px; height: 24px;"></div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-1 xsmall">Database Fundamentals</h6>
+                                            <p class="xsmall text-muted mb-0"><i class="far fa-calendar me-1"></i> 28
+                                                Sept 2024 <span
+                                                    class="badge bg-danger-subtle text-danger ms-2">Pending</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="assignment-item d-flex align-items-start gap-3">
+                                        <div class="check-box bg-light border rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 24px; height: 24px;"></div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-1 xsmall">Python Advanced</h6>
+                                            <p class="xsmall text-muted mb-0"><i class="far fa-calendar me-1"></i> 05
+                                                Oct 2024 <span class="badge bg-info-subtle text-info ms-2">In
+                                                    Progress</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Courses Section (18 Courses) -->
+                <div id="courses" class="dashboard-section p-4">
+                    <h2 class="fw-bold mb-4">Available <span class="text-primary">Courses</span></h2>
+                    <div class="row g-4" id="coursesGrid">
+                        <!-- Courses will be populated here via JS for cleaner HTML -->
+                    </div>
+                </div>
+
+                <!-- Other sections like schedule, reports, etc would follow same pattern -->
+                <div id="activities" class="dashboard-section p-4">
+                    <h2>Activities Section</h2>
+                </div>
+                <div id="schedule" class="dashboard-section p-4">
+                    <h2>Schedule Section</h2>
+                </div>
+                <div id="reports" class="dashboard-section p-4">
+                    <h2>Reports Section</h2>
+                </div>
+                <div id="grades" class="dashboard-section p-4">
+                    <h2>Grades Section</h2>
+                </div>
+                <div id="library" class="dashboard-section p-4">
+                    <h2>Library Section</h2>
+                </div>
+                <div id="settings" class="dashboard-section p-4">
+                    <h2>Settings Section</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
